@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,300&display=swap');
+
+
+.carousel-item img{
+    object-fit:fit;
+    object-position:top;
+    height: 60vh;
+    overflow:hidden;
+}
+
+html{
+    font-size:14px;
+}
+
+.old_price{
+    font-weight:bold;
+    text-align:center;
+    color: red;
+}
+.new_price{
+    font-weight:bold;
+    background-color: rgb(17, 182, 67);
+    color: aliceblue;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none !important;
+}
+.pic-box{
+    position:relative;
+}
+.hot{
+    background-color:orangered;
+    color:white;
+    width:50px;
+    text-align:center;
+    font-weight:bold;
+    display:inline;
+    border-radius:5px;
+    position: absolute;
+    top:3px;
+    right:20px;
+    z-index:10;
+}

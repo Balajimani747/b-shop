@@ -1,0 +1,46 @@
+{% extends 'temp1/layout/main.html' %}
+{% load static %}
+
+{% block title %}
+B-Shop
+{% endblock title %}
+
+
+
+{% block content %}
+{% include 'temp1/bars/slider.html' %}
+<section class="bg-light py-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3"></h4>
+                <h2><center>HOT SELLING PRODUCT LIST IN B-SHOP</center></h2>
+                <hr style="border-color:#b8bfc2;">
+            </div>
+            {% for pro in homeproducut %}
+                <div class="col-md-4 col-lg-3 pic-box">
+                    <div class="card my-3">
+                        {%if pro.trending %}
+                        <div class="hot">Hot</div>
+                        {% endif %}
+                        <img src="{{pro.product_image.url}}" class="card-image-top" alt="categories">
+                        <a href="{% url 'productdetails_page2' pro.category.name pro.name %}">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">{{pro.name}}</h5>
+                                <p class="card-text">
+                                    <div class="old_price">
+                                        <s>Rs.{{pro.original_price | stringformat:'d'}}</s></span>
+                                        <div class="new_price">
+                                         Rs.{{pro.selling_price | stringformat:'d'}}
+                                         </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </a>   
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'temp1/layout/main.html' %}
+{% block title %}
+Product Categories
+{% endblock title %}
+{% block content %}
+    <section class="light py-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="mb-3">Categories</h4>
+                    <hr style="border-color:#b8bfc2;">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+                          
+                        </ol>
+                      </nav>
+                </div> 
+                {% for product in separate %}
+                <div class="col-md-4 col-lg-3">
+                    <div class="card my-3">
+                        <img src="{{product.image.url}}" class="card-image-top" alt="categories">
+                        <a href="{% url 'collection_page2' product.name %}">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">{{product.name}}</h5>
+                                <p class="Card-text">{{product.description}}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed top">
+    <div class="container">
+      <a class="navbar-brand" href="{%url 'home_page'%}"><i class="fa fa-cart-plus">B-Shop</a></i>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="{%url 'home_page'%}"><i class="fa fa-home">Home</a></i>
+            <a class="nav-link active" href="{%url 'collection_page'%}"><i class="fa fa-cube">Collection</a></i>
+            <a class="nav-link active" href="{%url 'cart_page1' %}"><i class="fa fa-shopping-cart">Cart</a></i>
+            {% if request.user.is_authenticated %}
+              <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-users">{{request.user}}</a></i>
+              <a class="nav-link active" href="{%url 'logout_page'%}"><i class="fa fa-sign-out">Log out</a></i>
+            {% else %}
+              <a class="nav-link active" href="{%url 'login_page'%}"><i class="fa fa-sign-in">Login</a></i>
+              <a class="nav-link active" aria-current="page" href="{%url 'register_page'%}"><i class="fa fa-users">Register</i></a></i>
+            {% endif %}  
+        </div>
+      </div>
+    </div>
+  </nav>
