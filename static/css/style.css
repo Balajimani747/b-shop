@@ -4,7 +4,7 @@
 .carousel-item img{
     object-fit:fit;
     object-position:top;
-    height: 61vh;
+    height: 60vh;
     overflow:hidden;
 }
 
